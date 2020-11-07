@@ -20,7 +20,6 @@ let Repo = mongoose.model('Repo', repoSchema);
 
 let find = (callback) => {
   Repo.find({}, (err, info) => {
-    console.log(info)
     if (err) {
       console.log(err);
     } else {
@@ -38,7 +37,7 @@ let save = (data) => {
   // TODO: Your code here
   // This function should save a repo or repos to
   // the MongoDB
-  console.log(data)
+  // console.log(data)
   for (var i = 0; i < data.length; i++) {
     const saveData = new Repo({
       id: data[i].id,

@@ -30,8 +30,12 @@ app.get('/repos', function (req, res) {
       console.log('error', err);
       res.sendStatus(404);
     } else {
-      // console.log('data', data);
-      res.send(data);
+      // console.log('data', data[14].forks);
+      if (data.length === 0) {
+        res.send([])
+      } else {
+        res.send(data);
+      }
     }
   })
   // console.log(data)
